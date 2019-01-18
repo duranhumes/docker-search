@@ -1,16 +1,18 @@
-# Docker ELK stack for Mysql with phpmyadmin
+# Docker ELK stack for search you know.
 
-it is a infrastructure for using elasticsearch to index a mysql database with mysql-jdbc driver and logstash plugin aggregate to create event based entry for elasticsearch you can read [this document](https://www.elastic.co/guide/en/logstash/5.6/plugins-filters-aggregate.html#plugins-filters-aggregate) for more information 
-i use aggregate to filter records that have same id and diffrent tags 
-and collect all in one.
-
-### installation and use 
+### Installation and use 
 `rename .env.example to .env`
 change .env file as your need 
-`docker-compose build`
 `docker-compose up -d`
-now your mysql and phpmyadmin is ready add your database and change logstash pipline 
-lastrun in logstash see your last value that indexed from database and prevent from index whole database again . 
-your change will save in data directory in mysql and elasticsearch 
+
+---
+
+Logstash will go by the schedule and fetch the data accordingly.
+
+
+---
+
+You'll have to make sure that the `elasticsearch/data` directory is owned by elasticsearch `1100:1100` otherwise elasticsearch will crash.
+
 
 

@@ -7,7 +7,7 @@ change .env file as your need
 
 ---
 
-Logstash will go by the schedule and fetch the data accordingly.
+Logstash will go by the schedule in `logstash/pipeline/logstash.conf` (line 15) and fetch the data accordingly.
 
 
 ---
